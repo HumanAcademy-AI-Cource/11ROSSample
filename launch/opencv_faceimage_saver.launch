@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find opencv_apps)/launch/face_detection.launch">
+    <arg name="image" value="/image_raw" />
+    <arg name="debug_view" value="false" />
+  </include>
+  <node name="uvc_camera" pkg="uvc_camera" type="uvc_camera_node" />
+  <node name="faceimage_saver" pkg="opencv_faceimage_saver" type="faceimage_saver.py" required="true" output="screen" /> 
+</launch>
